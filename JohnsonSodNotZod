@@ -18,23 +18,23 @@ public class JohnsonMainClass
 	//	Discount names
 	public static final String DISCOUNT_NAME_MEMBER	=	"Member"				;
 	public static final String DISCOUNT_NAME_SENIOR	=	"Senior"				;
-	public static final String DISCOUNT_NAME_NONE	  =	"No Discount"		;
-	public static final String DISCOUNT_NAME_QUIT	  =	"Quit"					;
+	public static final String DISCOUNT_NAME_NONE	=	"No Discount"			;
+	public static final String DISCOUNT_NAME_QUIT	=	"Quit"					;
 	
 	//	Item names
-	public static final String ITEM_NAME_PREMIUM	=	"Bermuda"				      ;
-	public static final String ITEM_NAME_SPECIAL	=	"Fescue"				      ;
-	public static final String ITEM_NAME_BASIC		=	"Zoysia"				      ;
+	public static final String ITEM_NAME_PREMIUM	=	"Bermuda"				;
+	public static final String ITEM_NAME_SPECIAL	=	"Fescue"				;
+	public static final String ITEM_NAME_BASIC		=	"Zoysia"				;
 	public static final String ITEM_NAME_RETURN		=	"Return to Main Menu"	;
 	
 	//	Doubles
 	//	Discount rates
 	public static final double DISCOUNT_RATE_MEMBER	=	0.15					;
 	public static final double DISCOUNT_RATE_SENIOR	=	0.25					;
-	public static final double DISCOUNT_RATE_NONE	  =	0.0						;
+	public static final double DISCOUNT_RATE_NONE	=	0.0						;
 	
 	//	Tax rate
-	public static final double TAX_RATE				      =	0.075					;
+	public static final double TAX_RATE				=	0.075					;
 	
 	//	Item prices
 	public static final double ITEM_PRICE_PREMIUM	=  55.95					;
@@ -53,9 +53,9 @@ public class JohnsonMainClass
 		
 		//	Declare and initialize variables
 		//	Strings
-		String	userName		  =	""	;
+		String	userName		=	""	;
 		String	discountName	=	""	;
-		String	itemName		  =	""	;
+		String	itemName		=	""	;
 		
 		//	Characters
 		char	rateSelection	=	' '	;
@@ -63,29 +63,28 @@ public class JohnsonMainClass
 		
 		//	Integers
 		//	Quantity
-		int		howMany			  =	0	;
-    
+		int		howMany			=	0	;
 		//	Counters
-		int		memberCount		  =	0	;
-		int		seniorCount		  =	0	;
+		int		memberCount		=	0	;
+		int		seniorCount		=	0	;
 		int		noDiscountCount	=	0	;
-		int		premiumCount	  =	0	;
-		int		specialCount	  =	0	;
-		int		basicCount		  =	0	;
+		int		premiumCount	=	0	;
+		int		specialCount	=	0	;
+		int		basicCount		=	0	;
 
 		//	Doubles
 		//	Rates
 		double	discountRate	=	0.0	;
 		
 		//	Prices, discount, and tax
-		double	itemPrice		    =	0.0	;
-		double	discountAmount  =	0.0	;
-		double	discountPrice	  =	0.0	;
-		double	subTotal		    =	0.0	;
-		double	tax				      = 0.0	;
-		double	totalCost		    =	0.0	;
-		double	grandTotal		  =	0.0	;//	Accumulator
-		double	purchaseAmt		  =	0.0	;
+		double	itemPrice		=	0.0	;
+		double	discountAmount	=	0.0	;
+		double	discountPrice	=	0.0	;
+		double	subTotal		=	0.0	;
+		double	tax				=	0.0	;
+		double	totalCost		=	0.0	;
+		double	grandTotal		=	0.0	;//	Accumulator
+		double	purchaseAmt		=	0.0	;
 		
 		//	Display Welcome Banner
 		displayWelcomeBanner();
@@ -170,14 +169,14 @@ public class JohnsonMainClass
 				
 				//	Display Item Receipt
 				displayItemReceipt(	itemName,
-									          itemPrice,
-									          discountName,
-									          discountRate,
-									          discountAmount,
-									          discountPrice,
-									          howMany,
-									          purchaseAmt,
-									          subTotal	);
+									itemPrice,
+									discountName,
+									discountRate,
+									discountAmount,
+									discountPrice,
+									howMany,
+									purchaseAmt,
+									subTotal	);
 				
 				//	Update read of itemSelection
 				itemSelection = validateItemMenu(input);
@@ -191,9 +190,9 @@ public class JohnsonMainClass
 			
 			//	Display Order Total
 			displayOrderTotal(	userName,
-					          			subTotal,
-								          tax,
-								          totalCost	);
+								subTotal,
+								tax,
+								totalCost	);
 			
 			//	Reset subTotal
 			subTotal	= RESET_VALUE;
@@ -209,12 +208,12 @@ public class JohnsonMainClass
 			
 			//	Display Final Report
 			displayFinalReport(	memberCount,
-								          seniorCount,
-          								noDiscountCount,
-          								premiumCount,
-          								specialCount,
-          								basicCount,
-          								grandTotal	);
+								seniorCount,
+								noDiscountCount,
+								premiumCount,
+								specialCount,
+								basicCount,
+								grandTotal	);
 			
 		}//	END OF if grandTotal more than 0.0
 		
@@ -251,14 +250,14 @@ public class JohnsonMainClass
 	
 	//	Display Item Receipt method header
 	public static void displayItemReceipt(	String	borrowedItemName,
-											                    double	borrowedItemPrice,
-											                    String	borrowedDiscountName,
-											                    double 	borrowedDiscountRate,
-											                    double 	borrowedDiscountAmount,
-											                    double	borrowedDiscountPrice,
-											                    int		  borrowedHowMany,
-											                    double	borrowedPurchaseAmt,
-											                    double	borrowedSubTotal	)
+											double	borrowedItemPrice,
+											String	borrowedDiscountName,
+											double 	borrowedDiscountRate,
+											double 	borrowedDiscountAmount,
+											double	borrowedDiscountPrice,
+											int		borrowedHowMany,
+											double	borrowedPurchaseAmt,
+											double	borrowedSubTotal	)
 	{
 		
 		//	Item Report
@@ -280,9 +279,9 @@ public class JohnsonMainClass
 	
 	//	Display Order Total method header
 	public static void displayOrderTotal(	String	borrowedUserName,
-									                  		double 	borrowedSubTotal,
-											                  double	borrowedTax,
-											                  double	borrowedTotalCost	)
+											double 	borrowedSubTotal,
+											double	borrowedTax,
+											double	borrowedTotalCost	)
 	{
 		
 		//	Order Report
@@ -298,13 +297,13 @@ public class JohnsonMainClass
 	}//	END OF displayOrderTotal method
 	
 	//	Display Final Report method header
-	public static void displayFinalReport(	int		  borrowedMemberCount,
-											                    int		  borrowedSeniorCount,
-                    											int		  borrowedNoDiscountCount,
-                    											int		  borrowedPremiumCount,
-											                    int		  borrowedSpecialCount,
-                    											int		  borrowedBasicCount,
-                   											  double	borrowedGrandTotal	)
+	public static void displayFinalReport(	int		borrowedMemberCount,
+											int		borrowedSeniorCount,
+											int		borrowedNoDiscountCount,
+											int		borrowedPremiumCount,
+											int		borrowedSpecialCount,
+											int		borrowedBasicCount,
+											double	borrowedGrandTotal	)
 	{
 		
 		//	Final Report
@@ -394,15 +393,15 @@ public class JohnsonMainClass
 		
 		//	Validate localSelection
 		while(	localSelection != 'A' &&
-				    localSelection != 'B' &&
-				    localSelection != 'C' &&
-				    localSelection != 'Q'	)
+				localSelection != 'B' &&
+				localSelection != 'C' &&
+				localSelection != 'Q'	)
 		{
 			
 			//	Display error message
 			System.out.println(	"\nI'm sorry, but " +
-								          localSelection 		+ 
-								          " is not a valid response.\n");
+								localSelection 		+ 
+								" is not a valid response.\n");
 			
 			//	Display Main Menu
 			displayMainMenu();
@@ -434,15 +433,15 @@ public class JohnsonMainClass
 		
 		//	Validate localSelection
 		while(	localSelection != 'A' &&
-				    localSelection != 'B' &&
-				    localSelection != 'C' &&
-				    localSelection != 'R'	)
+				localSelection != 'B' &&
+				localSelection != 'C' &&
+				localSelection != 'R'	)
 		{
 			
 			//	Display error message
 			System.out.println(	"\nI'm sorry, but " +
-					                localSelection 		+ 
-					                " is not a valid response.\n");
+					localSelection 		+ 
+					" is not a valid response.\n");
 			
 			//	Display Item Menu
 			displayItemMenu();
@@ -476,8 +475,8 @@ public class JohnsonMainClass
 			
 			//	Display error message
 			System.out.println(	"\nI'm sorry, but " +
-								            localHowMany		+
-								          " is not a valid quantity.\n");
+								localHowMany		+
+								" is not a valid quantity.\n");
 			
 			//	Prompt user for input
 			System.out.print("Please enter a quantity: ");
