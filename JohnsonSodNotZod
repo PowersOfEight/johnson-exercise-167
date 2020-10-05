@@ -16,34 +16,34 @@ public class JohnsonMainClass
 	//	Class Constants
 	//	Strings
 	//	Discount names
-	public static final String DISCOUNT_NAME_MEMBER	=	"Member"				;
-	public static final String DISCOUNT_NAME_SENIOR	=	"Senior"				;
-	public static final String DISCOUNT_NAME_NONE	=	"No Discount"			;
-	public static final String DISCOUNT_NAME_QUIT	=	"Quit"					;
+	public static final String DISCOUNT_NAME_MEMBER		=	"Member"				;
+	public static final String DISCOUNT_NAME_SENIOR		=	"Senior"				;
+	public static final String DISCOUNT_NAME_NONE		=	"No Discount"				;
+	public static final String DISCOUNT_NAME_QUIT		=	"Quit"					;
 
 	//	Item names
-	public static final String ITEM_NAME_PREMIUM	=	"Bermuda"				;
-	public static final String ITEM_NAME_SPECIAL	=	"Fescue"				;
+	public static final String ITEM_NAME_PREMIUM		=	"Bermuda"				;
+	public static final String ITEM_NAME_SPECIAL		=	"Fescue"				;
 	public static final String ITEM_NAME_BASIC		=	"Zoysia"				;
-	public static final String ITEM_NAME_RETURN		=	"Return to Main Menu"	;
+	public static final String ITEM_NAME_RETURN		=	"Return to Main Menu"			;
 
 	//	Doubles
 	//	Discount rates
-	public static final double DISCOUNT_RATE_MEMBER	=	0.15					;
-	public static final double DISCOUNT_RATE_SENIOR	=	0.25					;
-	public static final double DISCOUNT_RATE_NONE	=	0.0						;
+	public static final double DISCOUNT_RATE_MEMBER		=	0.15					;
+	public static final double DISCOUNT_RATE_SENIOR		=	0.25					;
+	public static final double DISCOUNT_RATE_NONE		=	0.0					;
 
 	//	Tax rate
-	public static final double TAX_RATE				=	0.075					;
+	public static final double TAX_RATE			=	0.075					;
 
 	//	Item prices
-	public static final double ITEM_PRICE_PREMIUM	=  55.95					;
-	public static final double ITEM_PRICE_SPECIAL	=  24.95					;
-	public static final double ITEM_PRICE_BASIC		=  15.95					;
+	public static final double ITEM_PRICE_PREMIUM		=      55.95					;
+	public static final double ITEM_PRICE_SPECIAL		=      24.95					;
+	public static final double ITEM_PRICE_BASIC		=      15.95					;
 
 	//	Integer
 	//	Reset value
-	public static final int RESET_VALUE				=	   0					;
+	public static final int RESET_VALUE			=	   0					;
 
 	public static void main(String[] args)
 	{
@@ -54,34 +54,34 @@ public class JohnsonMainClass
 		//	Declare and initialize variables
 		//	Strings
 		String	userName		=	""	;
-		String	discountName	=	""	;
+		String	discountName		=	""	;
 		String	itemName		=	""	;
 
 		//	Characters
-		char	rateSelection	=	' '	;
-		char	itemSelection	=	' '	;
+		char	rateSelection		=	' '	;
+		char	itemSelection		=	' '	;
 
 		//	Integers
 		//	Quantity
-		int		howMany			=	0	;
+		int	howMany			=	0	;
 		//	Counters
-		int		memberCount		=	0	;
-		int		seniorCount		=	0	;
-		int		noDiscountCount	=	0	;
-		int		premiumCount	=	0	;
-		int		specialCount	=	0	;
-		int		basicCount		=	0	;
+		int	memberCount		=	0	;
+		int	seniorCount		=	0	;
+		int	noDiscountCount		=	0	;
+		int	premiumCount		=	0	;
+		int	specialCount		=	0	;
+		int	basicCount		=	0	;
 
 		//	Doubles
 		//	Rates
-		double	discountRate	=	0.0	;
+		double	discountRate		=	0.0	;
 
 		//	Prices, discount, and tax
 		double	itemPrice		=	0.0	;
-		double	discountAmount	=	0.0	;
-		double	discountPrice	=	0.0	;
+		double	discountAmount		=	0.0	;
+		double	discountPrice		=	0.0	;
 		double	subTotal		=	0.0	;
-		double	tax				=	0.0	;
+		double	tax			=	0.0	;
 		double	totalCost		=	0.0	;
 		double	grandTotal		=	0.0	;//	Accumulator
 		double	purchaseAmt		=	0.0	;
@@ -164,19 +164,19 @@ public class JohnsonMainClass
 				//	Calculate values
 				discountAmount	= itemPrice * discountRate;
 				discountPrice	= itemPrice - discountAmount;
-				purchaseAmt		= howMany * discountPrice;
-				subTotal		= subTotal + purchaseAmt;
+				purchaseAmt	= howMany * discountPrice;
+				subTotal	= subTotal + purchaseAmt;
 
 				//	Display Item Receipt
 				displayItemReceipt(	itemName,
-						itemPrice,
-						discountName,
-						discountRate,
-						discountAmount,
-						discountPrice,
-						howMany,
-						purchaseAmt,
-						subTotal	);
+							itemPrice,
+							discountName,
+							discountRate,
+							discountAmount,
+							discountPrice,
+							howMany,
+							purchaseAmt,
+							subTotal	);
 
 				//	Update read of itemSelection
 				itemSelection = validateItemMenu(input);
@@ -190,9 +190,9 @@ public class JohnsonMainClass
 
 			//	Display Order Total
 			displayOrderTotal(	userName,
-					subTotal,
-					tax,
-					totalCost	);
+						subTotal,
+						tax,
+						totalCost	);
 
 			//	Reset subTotal
 			subTotal	= RESET_VALUE;
@@ -208,12 +208,12 @@ public class JohnsonMainClass
 
 			//	Display Final Report
 			displayFinalReport(	memberCount,
-					seniorCount,
-					noDiscountCount,
-					premiumCount,
-					specialCount,
-					basicCount,
-					grandTotal	);
+						seniorCount,
+						noDiscountCount,
+						premiumCount,
+						specialCount,
+						basicCount,
+						grandTotal	);
 
 		}//	END OF if grandTotal more than 0.0
 
@@ -250,38 +250,38 @@ public class JohnsonMainClass
 
 	//	Display Item Receipt method header
 	public static void displayItemReceipt(	String	borrowedItemName,
-			double	borrowedItemPrice,
-			String	borrowedDiscountName,
-			double 	borrowedDiscountRate,
-			double 	borrowedDiscountAmount,
-			double	borrowedDiscountPrice,
-			int		borrowedHowMany,
-			double	borrowedPurchaseAmt,
-			double	borrowedSubTotal	)
+						double	borrowedItemPrice,
+						String	borrowedDiscountName,
+						double 	borrowedDiscountRate,
+						double 	borrowedDiscountAmount,
+						double	borrowedDiscountPrice,
+						int	borrowedHowMany,
+						double	borrowedPurchaseAmt,
+						double	borrowedSubTotal	)
 	{
 
 		//	Item Report
 		System.out.println("~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ");
 		System.out.println("Item Report");
 		System.out.println("~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ");
-		System.out.printf("%-18s%-15s\n", "Item Name", borrowedItemName 	);							//	2-column: text-Name
-		System.out.printf("%-18s%-2s%8.2f\n", "Original Price", "$", borrowedItemPrice);				//	3-column: text-$-price
-		System.out.printf("%-18s%-15s\n", "Discount Type", borrowedDiscountName);						//	2-column: text-Name
+		System.out.printf("%-18s%-15s\n", "Item Name", borrowedItemName 	);			//	2-column: text-Name
+		System.out.printf("%-18s%-2s%8.2f\n", "Original Price", "$", borrowedItemPrice);		//	3-column: text-$-price
+		System.out.printf("%-18s%-15s\n", "Discount Type", borrowedDiscountName);			//	2-column: text-Name
 		System.out.printf("%-18s%-2s%7.1f%-2s\n", "Discount Rate", "", borrowedDiscountRate * 100, "%");//	4-column: text-spaces-rate-%
-		System.out.printf("%-18s%-2s%8.2f\n", "Discount Amount", "$", borrowedDiscountAmount);			//	3-column: text-$-discount
-		System.out.printf("%-18s%-2s%8.2f\n", "Discounted Price", "$", borrowedDiscountPrice);			//	3-column: text-$-price
-		System.out.printf("%-18s%-2s%8d\n", "Quantity", "", borrowedHowMany);							//	3-column: text-spaces-quantity
-		System.out.printf("%-18s%-2s%8.2f\n", "Purchase Amount", "$", borrowedPurchaseAmt);				//	3-column: text-$-price
-		System.out.printf("%-18s%-2s%8.2f\n", "Subtotal", "$", borrowedSubTotal);						//	3-column: text-$-price
+		System.out.printf("%-18s%-2s%8.2f\n", "Discount Amount", "$", borrowedDiscountAmount);		//	3-column: text-$-discount
+		System.out.printf("%-18s%-2s%8.2f\n", "Discounted Price", "$", borrowedDiscountPrice);		//	3-column: text-$-price
+		System.out.printf("%-18s%-2s%8d\n", "Quantity", "", borrowedHowMany);				//	3-column: text-spaces-quantity
+		System.out.printf("%-18s%-2s%8.2f\n", "Purchase Amount", "$", borrowedPurchaseAmt);		//	3-column: text-$-price
+		System.out.printf("%-18s%-2s%8.2f\n", "Subtotal", "$", borrowedSubTotal);			//	3-column: text-$-price
 		System.out.println("~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ");
 
 	}//	END OF displayItemReceipt method
 
 	//	Display Order Total method header
 	public static void displayOrderTotal(	String	borrowedUserName,
-			double 	borrowedSubTotal,
-			double	borrowedTax,
-			double	borrowedTotalCost	)
+						double 	borrowedSubTotal,
+						double	borrowedTax,
+						double	borrowedTotalCost	)
 	{
 
 		//	Order Report
@@ -289,7 +289,7 @@ public class JohnsonMainClass
 		System.out.println("Order Report");
 		System.out.println("~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ");
 		System.out.printf("%-18s%-15s\n", "User", borrowedUserName);				//	2-column: text-Name
-		System.out.printf("%-18s%-2s%8.2f\n", "Subtotal", "$", borrowedSubTotal);	//	3-column: text-$-price
+		System.out.printf("%-18s%-2s%8.2f\n", "Subtotal", "$", borrowedSubTotal);		//	3-column: text-$-price
 		System.out.printf("%-18s%-2s%8.2f\n", "Tax", "$", borrowedTax);				//	3-column: text-$-tax
 		System.out.printf("%-18s%-2s%8.2f\n", "TotalCost", "$", borrowedTotalCost);		//	3-column: text-$-price
 		System.out.println("~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ");
@@ -297,13 +297,13 @@ public class JohnsonMainClass
 	}//	END OF displayOrderTotal method
 
 	//	Display Final Report method header
-	public static void displayFinalReport(	int		borrowedMemberCount,
-			int		borrowedSeniorCount,
-			int		borrowedNoDiscountCount,
-			int		borrowedPremiumCount,
-			int		borrowedSpecialCount,
-			int		borrowedBasicCount,
-			double	borrowedGrandTotal	)
+	public static void displayFinalReport(	int	borrowedMemberCount,
+						int	borrowedSeniorCount,
+						int	borrowedNoDiscountCount,
+						int	borrowedPremiumCount,
+						int	borrowedSpecialCount,
+						int	borrowedBasicCount,
+						double	borrowedGrandTotal	)
 	{
 
 		//	Final Report
@@ -313,14 +313,14 @@ public class JohnsonMainClass
 		System.out.println("Count of discount types:");
 		System.out.printf("%-23s%5d\n", DISCOUNT_NAME_MEMBER, borrowedMemberCount);		//	2-column: Name-count
 		System.out.printf("%-23s%5d\n", DISCOUNT_NAME_SENIOR, borrowedSeniorCount);		//	2-column: Name-count
-		System.out.printf("%-23s%5d\n", DISCOUNT_NAME_NONE, borrowedNoDiscountCount);	//	2-column: Name-count
+		System.out.printf("%-23s%5d\n", DISCOUNT_NAME_NONE, borrowedNoDiscountCount);		//	2-column: Name-count
 		System.out.println("~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ");
 		System.out.println("Count of item types:");
 		System.out.printf("%-23s%5d\n", ITEM_NAME_PREMIUM, borrowedPremiumCount);		//	2-column: Name-count
 		System.out.printf("%-23s%5d\n", ITEM_NAME_SPECIAL, borrowedSpecialCount);		//	2-column: Name-count
 		System.out.printf("%-23s%5d\n", ITEM_NAME_BASIC, borrowedBasicCount);			//	2-column: Name-count
 		System.out.println("~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ");
-		System.out.printf("%-18s%-2s%8.2f\n", "Grand Total", "$", borrowedGrandTotal);	//	3-column: text-$-Grand Total		
+		System.out.printf("%-18s%-2s%8.2f\n", "Grand Total", "$", borrowedGrandTotal);		//	3-column: text-$-Grand Total		
 		System.out.println("~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ");
 
 	}//	END OF displayFinalReport method
@@ -332,10 +332,10 @@ public class JohnsonMainClass
 		//	Display Main Menu
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		System.out.println("DISCOUNT MENU");
-		System.out.printf("%-8s%-12s%6.1f%-2s\n", "[A] for", DISCOUNT_NAME_MEMBER, DISCOUNT_RATE_MEMBER * 100 /*<- Display as a percentage */, "%");//	4-Column: text-name-rate-%
-		System.out.printf("%-8s%-12s%6.1f%-2s\n", "[B] for", DISCOUNT_NAME_SENIOR, DISCOUNT_RATE_SENIOR * 100 /*<- Display as a percentage */, "%");//	4-Column: text-name-rate-%
+		System.out.printf("%-8s%-12s%6.1f%-2s\n", "[A] for", DISCOUNT_NAME_MEMBER, DISCOUNT_RATE_MEMBER * 100 /*<- Display as a percentage */, "%");	//	4-Column: text-name-rate-%
+		System.out.printf("%-8s%-12s%6.1f%-2s\n", "[B] for", DISCOUNT_NAME_SENIOR, DISCOUNT_RATE_SENIOR * 100 /*<- Display as a percentage */, "%");	//	4-Column: text-name-rate-%
 		System.out.printf("%-8s%-12s%6.1f%-2s\n", "[C] for", DISCOUNT_NAME_NONE, DISCOUNT_RATE_NONE * 100 /*<- Display as a percentage */, "%");	//	4-Column: text-name-rate-%
-		System.out.printf("%-8s%-12s\n", "[Q] to", DISCOUNT_NAME_QUIT);//	2-column:	text-name
+		System.out.printf("%-8s%-12s\n", "[Q] to", DISCOUNT_NAME_QUIT);											//	2-column:	text-name
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		System.out.print("Enter your selection here: ");
 
@@ -393,9 +393,9 @@ public class JohnsonMainClass
 
 		//	Validate localSelection
 		while(	localSelection != 'A' &&
-				localSelection != 'B' &&
-				localSelection != 'C' &&
-				localSelection != 'Q'	)
+			localSelection != 'B' &&
+			localSelection != 'C' &&
+			localSelection != 'Q'	)
 		{
 
 			//	Display error message
@@ -433,9 +433,9 @@ public class JohnsonMainClass
 
 		//	Validate localSelection
 		while(	localSelection != 'A' &&
-				localSelection != 'B' &&
-				localSelection != 'C' &&
-				localSelection != 'R'	)
+			localSelection != 'B' &&
+			localSelection != 'C' &&
+			localSelection != 'R'	)
 		{
 
 			//	Display error message
